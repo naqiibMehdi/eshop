@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Rediriger toutes les requêtes vers Public/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ Public/index.php [QSA,L]

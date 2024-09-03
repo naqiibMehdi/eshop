@@ -1,0 +1,56 @@
+BDD : boutique
+--------------
+
+user 
+----
+- id_user       INT             PK      AI 
+- email         VARCHAR(255)    UNIQUE
+- username      VARCHAR(255)    UNIQUE
+- password      VARCHAR(255)
+- firstname     VARCHAR(255)
+- lastname      VARCHAR(255)
+- address       TEXT
+- postal_code   VARCHAR(5)
+- city          VARCHAR(255)
+- status        VARCHAR(255)
+
+product
+-------
+- id_product    INT             PK      AI 
+- reference     VARCHAR(255)    UNIQUE 
+- product_name  VARCHAR(255)
+- description   TEXT 
+- main_img      VARCHAR(255)
+- price         INT 
+- stock         INT 
+- category_id   INT             INDEX       DEFAULT NULL    ON DELETE SET NULL   
+- size_id       INT             INDEX       DEFAULT NULL    ON DELETE SET NULL  
+- active        INT 
+
+category 
+--------
+- id_category   INT             PK      AI
+- category_name VARCHAR(255)    UNIQUE
+- description   TEXT 
+
+size 
+--------
+- id_size       INT             PK      AI
+- size_name     VARCHAR(255)    UNIQUE
+- description   TEXT 
+
+order
+-----
+- id_order      INT             PK      AI
+- user_id       INT             INDEX       DEFAULT NULL    ON DELETE SET NULL  
+- order_date    DATETIME
+- total         INT 
+- active        INT 
+
+order_details
+-------------
+- id_order_details  INT         PK      AI 
+- order_id          INT         INDEX                       ON DELETE RESTRICT  
+- product_id        INT         INDEX                       ON DELETE RESTRICT   
+- quantity          INT 
+- unit_price        INT 

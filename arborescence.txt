@@ -1,0 +1,46 @@
+eshop : 
+-----------
+- App/                                      (la logique de l'application)
+    - Controllers/
+        - Back/
+            - ShopController.php
+        - Front/
+            - IndexController.php
+            - LoginController.php
+            - RegisterController.php
+    - Models/
+        - Shop.php 
+        - User.php
+    - Views/
+        - Back/
+            - index.php
+        - Front/
+            - index.php
+            - login.php
+            - register.php
+        - Layout/
+            - main.php
+            - back.php
+- Config/                                   (les informations de connexion BDD)
+    - config.php 
+- Core/                                     (le coeur de l'application)
+    - Autoloader.php 
+    - Controller.php 
+    - Model.php 
+    - Request.php 
+    - Router.php 
+    - Session.php 
+- Public/                                   (les éléments statiques et le fichier index.php)
+    - css/
+        - admin.css
+        - front.css
+    - js/
+        - admin.js
+        - front.js
+    - img/
+    - index.php
+- SQL/
+    - modelisation.txt
+- Vendor/                                   (des bibliothèques extérieures)
+- .htaccess
+- README.me
